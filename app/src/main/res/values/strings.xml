@@ -14,5 +14,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="TxtCed">Ingrese su cédula</string>
     <string name="TxtNom">Ingrese su nombre</string>
+    <string name="LblNom">Nombre</string>
+    <string name="LblCed">Cédula</string>
 
 </resources>
