@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Login</string>
-    <string name="login">Login</string>
+    <string name="app_name">Asistente De Compras</string>
+    <string name="login">Asistente de Compras</string>
     <string name="txtCat">Categorias de Productos</string>
 </resources>

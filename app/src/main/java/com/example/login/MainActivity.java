@@ -13,7 +13,8 @@ public class MainActivity extends AppCompatActivity {
     public void entrar(View view){
         EditText nombreEditText = findViewById(R.id.nombreEditText);
         Log.i("Nombre: ", nombreEditText.getText().toString());
-
+        Intent miIntent = new Intent(MainActivity.this,CategoriasProductos.class);
+        startActivity(miIntent);
     }
 
     @Override

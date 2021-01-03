@@ -37,6 +37,7 @@
         android:ems="10"
         android:hint="Nombre de Usuario"
         android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
