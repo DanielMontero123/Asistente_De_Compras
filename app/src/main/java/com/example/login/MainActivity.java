@@ -11,9 +11,11 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
 
     public void entrar(View view){
-        EditText nombreEditText = findViewById(R.id.nombreEditText);
-        Log.i("Nombre: ", nombreEditText.getText().toString());
-
+        /*EditText cedulaEditText = findViewById(R.id.nombreEditText);
+        Log.i("Cédula: ", cedulaEditText.getText().toString());
+        */
+        Intent usuarios = new Intent(this, Usuarios.class);
+        startActivity(usuarios);
     }
 
     @Override
