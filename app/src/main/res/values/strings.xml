@@ -21,5 +21,8 @@
     <string name="bnNuevaList">Nueva Lista</string>
     <string name="bnLista">Lista</string>
     <string name="bnProductos">Productos</string>
+    <string name="entrar">ENTRAR</string>
+    <string name="nombre_de_usuario">Nombre de Usuario</string>
+    <string name="txtLogin">Login</string>
 
 </resources>
