@@ -16,5 +16,10 @@
     <string name="TxtNom">Ingrese su nombre</string>
     <string name="LblNom">Nombre</string>
     <string name="LblCed">Cédula</string>
+    <string name="bnRegistrar">Registrar</string>
+    <string name="bnCreateUser">Crear Usuario</string>
+    <string name="bnNuevaList">Nueva Lista</string>
+    <string name="bnLista">Lista</string>
+    <string name="bnProductos">Productos</string>
 
 </resources>
