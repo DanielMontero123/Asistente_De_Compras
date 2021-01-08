@@ -35,7 +35,7 @@
         android:layout_marginRight="91dp"
         android:background="#8827F3"
         android:ems="10"
-        android:hint="Nombre de Usuario"
+        android:hint="Ingrese su Usuario"
         android:inputType="textPersonName"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"

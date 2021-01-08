@@ -3,34 +3,47 @@ package com.example.login;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
 
-    private EditText nombre;
+    private EditText cedula;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        nombre = (EditText)findViewById(R.id.nombreEditText);
+        cedula = (EditText)findViewById(R.id.nombreEditText);
     }
 
 
     public void principal(View view){
-        //EditText nombreEditText = findViewById(R.id.nombreEditText);
-        //Log.i("Nombre: ", nombreEditText.getText().toString());
-        String nom = nombre.getText().toString();
+        ArrayList<String> datos_usuario = new ArrayList<String>();
 
-        if( !nom.isEmpty() ){
-            Intent principal = new Intent(this, Principal.class);
-            startActivity(principal);
+        String ced = cedula.getText().toString();
+        if( !ced.isEmpty() ){
+            User usuario = new User(this, "SUPERMERCADO", null, 1);
+            SQLiteDatabase baseDatos = usuario.getWritableDatabase();
+            Cursor fila = baseDatos.rawQuery("select * from USUARIOS where CEDULA =" + ced, null);
+            if( fila.moveToFirst() ){
+                datos_usuario.add(fila.getString(0));
+                datos_usuario.add(fila.getString(1));
+                Intent principal = new Intent(this, Principal.class);
+                startActivity(principal);
+            }else{
+                Toast.makeText(this, "El usuario no existe", Toast.LENGTH_SHORT).show();
+            }
+            baseDatos.close();
         }else{
-            Toast.makeText(this, "El usuario no existe", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Llene los campos", Toast.LENGTH_SHORT).show();
         }
     }
 

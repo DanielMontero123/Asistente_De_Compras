@@ -2,7 +2,9 @@ package com.example.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -11,7 +13,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class Usuarios extends AppCompatActivity {
-    ArrayList<String> usuario = new ArrayList<>();
+    //ArrayList<String> usuario = new ArrayList<>();
     private EditText cedula, nombre;
 
     @Override
@@ -22,11 +24,28 @@ public class Usuarios extends AppCompatActivity {
         nombre = findViewById(R.id.TxtNom);
     }
 
+    public void registrar(){
+        User usuario = new User(this, "SUPERMERCADO", null, 1);
+        SQLiteDatabase baseDatos = usuario.getWritableDatabase();
+        String ced = cedula.getText().toString();
+        String nom = nombre.getText().toString();
+        ContentValues registro = new ContentValues();
+        registro.put("CEDULA", ced);
+        registro.put("NOMBRE",nom);
+
+        baseDatos.insert("USUARIOS", null, registro);
+        baseDatos.close();
+        cedula.setText("");
+        nombre.setText("");
+        //mensage de registro existo;
+        Toast.makeText(this, "registro existo", Toast.LENGTH_SHORT).show();
+    }
     public void guardarUsuarios(View view){
         String ced = cedula.getText().toString();
         String nom = nombre.getText().toString();
         if( !ced.isEmpty() || !nom.isEmpty()  ){
-            usuario.add(cedula.getText().toString());
+            //usuario.add(cedula.getText().toString());
+            registrar();
             Intent categorias = new Intent(this, CategoriasProductos.class);
             startActivity(categorias);
         }else{
