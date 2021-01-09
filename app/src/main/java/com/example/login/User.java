@@ -14,6 +14,9 @@ public class User extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase baseDatos) {
         baseDatos.execSQL( "create table USUARIOS ( CEDULA text primary key, NOMBRE text )" );
+        baseDatos.execSQL(" create table PRODUCTOS ( ID_PRO text primary key, NOM_PRO text )" );
+        baseDatos.execSQL( "INSERT INTO  PRODUCTOS (ID_PRO, NOM_PRO) values ('','') " );
+
     }
 
     @Override

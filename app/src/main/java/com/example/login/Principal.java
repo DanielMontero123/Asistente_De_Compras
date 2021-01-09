@@ -18,4 +18,9 @@ public class Principal extends AppCompatActivity {
         Intent categorias = new Intent(this, CategoriasProductos.class);
         startActivity(categorias);
     }
+
+    public void verListaCompra(View view){
+         Intent verLista = new Intent(this, listadoProductos.class);
+         startActivity(verLista);
+    }
 }

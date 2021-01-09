@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             User usuario = new User(this, "SUPERMERCADO", null, 1);
             SQLiteDatabase baseDatos = usuario.getWritableDatabase();
             Cursor fila = baseDatos.rawQuery("select * from USUARIOS where CEDULA =" + ced, null);
-            if( fila.moveToFirst() ){
+            if ( fila.moveToFirst() ){
                 datos_usuario.add(fila.getString(0));
                 datos_usuario.add(fila.getString(1));
                 Intent principal = new Intent(this, Principal.class);

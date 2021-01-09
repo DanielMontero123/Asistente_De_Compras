@@ -11,6 +11,7 @@
     <string name="previous">Previous</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="txtResUser">Registro De Usuarios</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="TxtCed">Ingrese su cédula</string>
     <string name="TxtNom">Ingrese su nombre</string>
@@ -21,5 +22,7 @@
     <string name="bnNuevaList">Nueva Lista</string>
     <string name="bnLista">Lista</string>
     <string name="bnProductos">Productos</string>
+    <string name="tuLista">Tu Lista de Compra</string>
+    <string name="bnVerLista">Ver Lista</string>
 
 </resources>

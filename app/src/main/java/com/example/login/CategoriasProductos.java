@@ -2,9 +2,14 @@ package com.example.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+
+import java.util.ArrayList;
 
 public class CategoriasProductos extends AppCompatActivity {
 
@@ -28,6 +33,7 @@ public class CategoriasProductos extends AppCompatActivity {
         spCarnes = (Spinner)findViewById(R.id.spCarnes);
     }
 
+    ArrayList<String> listacompra = new ArrayList<String>();
     public void cargarComboBox(){
         String[] frutas = {"FRUTAS Y VERDURAS","Platanos","Manzanas","Uvas","Peras","Sandias","Melones","Pimientos","Tomates","Limones","Lechugas"};
         String[] lacteos = {"LACTEOS","Leche","Yogurt","Queso","Helado","Kefir","Mantequilla","Nata"};
@@ -39,23 +45,40 @@ public class CategoriasProductos extends AppCompatActivity {
 
         ArrayAdapter<String> adapterF = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, frutas);
         spFrutas.setAdapter(adapterF);
+        listacompra.add(spFrutas.getSelectedItem().toString());
 
         ArrayAdapter<String> adapterLT = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, lacteos);
         spLacteos.setAdapter(adapterLT);
+        listacompra.add(spLacteos.getSelectedItem().toString());
 
         ArrayAdapter<String> adapterZ = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, zumos);
         spZumos.setAdapter(adapterZ);
+        listacompra.add( spZumos.getSelectedItem().toString());
 
         ArrayAdapter<String> adapterLP = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, limpieza);
         spLimpieza.setAdapter(adapterLP);
+        listacompra.add(spLimpieza.getSelectedItem().toString());
 
         ArrayAdapter<String> adapterAP = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, aperitivos);
         spAperitivos.setAdapter(adapterAP);
+        listacompra.add(spAperitivos.getSelectedItem().toString());
 
         ArrayAdapter<String> adapterG = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, granos);
         spGranos.setAdapter(adapterG);
+        listacompra.add(spGranos.getSelectedItem().toString());
 
         ArrayAdapter<String> adapterC = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,carnes);
         spCarnes.setAdapter(adapterC);
+        /*spCarnes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {*/
+                listacompra.add(spCarnes.getSelectedItem().toString());
+            //}
+        //});
+    }
+
+    public void verLista(View view){
+        Intent categorias = new Intent(this, listadoProductos.class);
+        startActivity(categorias);
     }
 }
